@@ -39,7 +39,7 @@ class GamesController extends Controller
     public function destroy(string $id)
     {
         $results = array_filter($this->game_list, function ($game) use ($id) {
-            return $game['id'] != $id;
+            return $game['id'] == $id;
         });
         return response()->json([
             'message' => 'Record Successfull Deleted.',
